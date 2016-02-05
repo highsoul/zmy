@@ -14,4 +14,6 @@ func main() {
 
 func D_Locate(c *gin.Context) {
 	fmt.Println("get it!!!!!!!!!")
+	value := c.PostForm("value")
+	fmt.Println(value)
 }
