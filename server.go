@@ -25,15 +25,9 @@ func init() {
 func D_Locate(c *gin.Context) {
 	fmt.Println("get it!!!!!!!!!")
 
-	fmt.Println(c.Param("lng"))
-	fmt.Println(c.Param("lat"))
-	fmt.Println(c.Params)
-	lng := c.PostForm("lng")
-	lat := c.PostForm("lat")
-	fmt.Println("------PostForm lng------")
-	fmt.Println(lng)
-	fmt.Println("------PostForm lat------")
-	fmt.Println(lat)
+	fmt.Println(c.Request.Body)
+	fmt.Println(c.Request.FormValue("lng"))
+	fmt.Println(c.Request.FormValue("lat"))
 
 }
 
