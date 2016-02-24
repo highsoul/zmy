@@ -30,6 +30,10 @@ func D_Locate(c *gin.Context) {
 	fmt.Println(c.Params)
 	lng := c.PostForm("lng")
 	lat := c.PostForm("lat")
+	fmt.Println("------PostForm lng------")
+	fmt.Println(lng)
+	fmt.Println("------PostForm lat------")
+	fmt.Println(lat)
 
 }
 
