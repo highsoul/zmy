@@ -1,0 +1,11 @@
+html,body{
+    background-color: #ddd;
+}
+
+#map-footer{
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    bottom: 0px;
+    background-color: #aaa;
+}

@@ -21,27 +21,16 @@ func init() {
 }
 
 /*Arduino 上传数据类实体*/
-type LngLat struct {
-	Lng float64 `form:"lng" json:"lng" binding:"required"`
-	Lat float64 `form:"lat" json:"lat" binding:"required"`
-}
 
 func D_Locate(c *gin.Context) {
 	fmt.Println("get it!!!!!!!!!")
 
-	var lnglat LngLat
+	fmt.Println(c.Param("lng"))
+	fmt.Println(c.Param("lat"))
+	fmt.Println(c.Params)
+	lng := c.PostForm("lng")
+	lat := c.PostForm("lat")
 
-	err := c.BindJSON(&lnglat)
-
-	if err == nil {
-		fmt.Println(lnglat)
-		fmt.Printf("Lng: %f - Lat: %f \n", lnglat.Lng, lnglat.Lat)
-		point := model.Point{Lng: lnglat.Lng, Lat: lnglat.Lat}
-		point.Insert(db)
-
-	} else {
-		fmt.Println(err.Error())
-	}
 }
 
 func main() {
