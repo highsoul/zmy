@@ -1,0 +1,10 @@
+<ul class="list-group">
+{{ range $index, $value := .points }}
+  <li class="list-group-item" style="padding:0px 15px; height: 60px; line-height: 60px; vertical-align: middle;">
+       <span style="font-size:16px; font-weight: bold; margin: 0 15px;">{{ $index }}</span>
+       <span style="margin-left: 15px; margin-right:25px;">{{ .Lng }}&nbsp;:&nbsp;{{ .Lat }}</span>
+       <spam>{{ .CreateAt }}</spam>
+       <a class="p-d-btn btn btn-danger" data-id="{{.ID}}" style="height:30px; width:30px; line-height: 30px; font-size:15px;margin-top:15px; margin-right: 15px; padding:0px; float: right;"><i class="fa fa-times"></i></a>
+  </li>
+  {{ end }}
+</ul>
