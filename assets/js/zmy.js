@@ -28,13 +28,13 @@ $(document).ready(function(){
             dataType: "json",
             success: function(data){
                 console.log(data);
-                
+                var ll = AMap.LngLat(data.Lng, data.Lat).offset(-500,0);
                 map.clearMap();
                 map.setZoom(16);
-                map.setCenter([data.Lng, data.Lat]);
+                map.setCenter(ll);
 
                 var marker = new AMap.Marker({
-                    position: [data.Lng, data.Lat],
+                    position: ll,
                     title: data.CreateAt
                 });
                 marker.setMap(map);
