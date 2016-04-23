@@ -53,12 +53,14 @@ $(document).ready(function(){
                 console.log(data);
                 map.clearMap();
                 for(point in data){
+                    var ll = new AMap.LngLat(data[point].Lng, data[point].Lat);
                     if(point == 0){
-                        map.setCenter([data[point].Lng, data[point].Lat]);
+                        map.setCenter(ll.offset(-500, 0));
                         map.setZoom(13);
                     }
+
                     var marker = new AMap.Marker({
-                        position: [data[point].Lng, data[point].Lat],
+                        position: ll.offset(-500, 0),
                         title: data[point].CreateAt
                     });
                     marker.setMap(map);
